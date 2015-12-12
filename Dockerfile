@@ -17,13 +17,14 @@ RUN curl -fsSL http://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binar
   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 
 ENV MAVEN_HOME /usr/share/maven
+ENV M2_HOME /var/jenkins_home/.m2
 
 # Confiure Jenkins
 COPY plugins.txt /usr/share/jenkins/plugins.txt
 COPY config.groovy /usr/share/jenkins/ref/init.groovy.d/config.groovy
 RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
 
-# Volume
+# Volumes
 VOLUME /root/.ssh
 
 # Start it all

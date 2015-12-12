@@ -13,9 +13,10 @@ touch $HOME/.ssh/known_hosts
 if [ ! -f $HOME/.ssh/id_rsa.pub ]; then
     ssh-keygen -t rsa -f $HOME/.ssh/id_rsa -q -N ""
     echo "=> Generated ssh keys"
-    echo "=> Public key:"
-    cat $HOME/.ssh/id_rsa.pub
 fi
+echo "=> Public key:"
+cat $HOME/.ssh/id_rsa.pub
+
 
 # Add known hosts
 if [ -n "${KNOWN_HOSTS}" ]; then

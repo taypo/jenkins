@@ -17,7 +17,7 @@ RUN curl -fsSL http://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binar
   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 
 ENV MAVEN_HOME /usr/share/maven
-ENV M2_HOME /var/jenkins_home/.m2
+COPY settings.xml /root/.m2/settings.xml
 
 # Confiure Jenkins
 COPY plugins.txt /usr/share/jenkins/plugins.txt

@@ -1,6 +1,5 @@
-## taypo/jenkins docker image
 
-No configuration, package management etc. is needed to add a new Jenkins item, point to a repository over at Bitbucket, make a maven build, and produce either a runnable jar or even better, another docker image that runs the jar.
+This a pre-configured jenkins image that can run maven builds from git or mercurial repositories, and produce jars or other docker images. No additional jenkins plugins or linux packages is needed from the start.
 
 ### Installed Packages
 Below packages are pre-installed:
